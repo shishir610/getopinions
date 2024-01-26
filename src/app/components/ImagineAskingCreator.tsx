@@ -5,23 +5,23 @@ import "./ImagineAskingCreator.css"
 export default function ImagineAskingCreator() {
     return (
         <Fragment>
-            <div className="flex justify-center">
-                <p className="text-zinc-800 text-4xl font-semibold tracking-tighter text-center">
-                    Imagine asking
+            <div className="justify-center">
+                <p className="text-zinc-600 text-2xl decoration-wavy underline font-semibold tracking-tighter text-center italic">
+                    What if you could
                 </p>
-                <div className="rotating-text text-zinc-800 ml-2 text-4xl font-semibold tracking-tighter">
-                    {imagine.map((im) => {
-                        return <span>{im.creator}</span>
-                    })}
-                    <span>{imagine[0].creator}</span>
-                </div>
             </div>
             <div className="flex justify-center">
-                <div className="rotating-text text-zinc-800 ml-2 text-4xl -mt-8 font-semibold tracking-tighter text-center">
+                <div className="rotating-text text-zinc-600 ml-2 mt-2 text-3xl flex items-center font-semibold tracking-tighter text-center">
                     {imagine.map((im) => {
-                        return <span>"{im.question}"</span>
+                        return (
+                            <span>
+                                Ask {im.creator}: "{im.question}"
+                            </span>
+                        )
                     })}
-                    <span>"{imagine[0].question}"</span>
+                    <span>
+                        Ask {imagine[0].creator}: "{imagine[0].question}"
+                    </span>
                 </div>
             </div>
         </Fragment>

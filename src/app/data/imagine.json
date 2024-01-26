@@ -1,26 +1,26 @@
 [
     {
-        "creator": "Tim Ferriss",
-        "question": "What's your latest life-changing routine?"
+        "creator": "Joe Rogan",
+        "question": "Your top 3 podcasting tips?"
     },
     {
-        "creator": "Neil deGrasse",
-        "question": "Favorite spot in the cosmos?"
-    },
-    {
-        "creator": "Marie Kondo  ",
-        "question": "How do you deal with keepsakes?"
+        "creator": "Marques Brownlee",
+        "question": "Best tech gadget this year?"
     },
     {
         "creator": "Gordon Ramsay",
-        "question": "Your secret for a perfect steak?"
+        "question": "Your secret to perfect eggs?"
     },
     {
-        "creator": "Malala Yousaf",
-        "question": "One tip for aspiring activists?"
+        "creator": "Emma Chamberlain",
+        "question": "Essentials for a cozy day in?"
     },
     {
-        "creator": "Elon Musk",
-        "question": "Hardest part about Mars life?"
+        "creator": "Gary Vaynerchuk",
+        "question": "Key to starting a business?"
+    },
+    {
+        "creator": "Charli D'Amelio",
+        "question": "Favorite dance trend now?"
     }
 ]

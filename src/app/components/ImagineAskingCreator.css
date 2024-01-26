@@ -1,13 +1,13 @@
 .rotating-text {
     display: flex;
     flex-direction: column;
-    height: 80px; /* Adjust height if necessary */
+    height: 40px;
     overflow: hidden;
 }
 
 .rotating-text span {
     display: block;
-    animation: rotateText 10s infinite linear; /* Adjusted for continuous motion */
+    animation: rotateText 10s infinite linear;
     padding-bottom: 40px;
 }
 
@@ -18,5 +18,5 @@
     49.8%, 58.2% { transform: translateY(-300%); }
     66.4%, 74.8% { transform: translateY(-400%); }
     83%, 91.4% { transform: translateY(-500%); }
-    100% { transform: translateY(-600%); } /* Extended to move to the start */
+    100% { transform: translateY(-600%); }
 }

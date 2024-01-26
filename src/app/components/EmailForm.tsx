@@ -7,7 +7,7 @@ export default function EmailForm() {
                 <input
                     type="search"
                     id="search"
-                    className="block w-max p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-transparent focus:ring-red-600 focus:outline-zinc-500"
+                    className="block w-max p-4 text-sm text-gray-900 border border-gray-300 rounded-lg focus:border-transparent focus:ring-red-600 focus:outline-zinc-500"
                     placeholder="Enter your email"
                     required
                     size={30}
