@@ -1,8 +1,8 @@
 import React from "react"
-import btg from "../data/betterThanGoogle.json"
+import btg from "../../data/betterThanGoogle.json"
 import Card from "./Card"
 
-export default function BetterThanGoogle() {
+export default function CardArrangement() {
     return (
         <div className="container mx-auto mb-20">
             <div className="flex">

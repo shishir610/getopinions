@@ -1,5 +1,5 @@
 import React from "react"
-import EmailForm from "./EmailForm"
+import EmailForm from "../elements/EmailForm"
 
 export default function Hero() {
     return (
@@ -10,8 +10,7 @@ export default function Hero() {
                 your favorite <span className="gradient-text">creators</span>
             </p>
             <p className="text-zinc-700 text-xl mt-8 font-light tracking-tighter text-center">
-                Ever wanted a very specific opinion from that Podcaster or
-                Tiktoker?
+                Ever wanted a very specific opinion from that Tweep?
             </p>
             <div className="mt-12">
                 <EmailForm />

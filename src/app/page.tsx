@@ -1,7 +1,8 @@
-import Navigation from "./components/Navigation"
-import ImagineAskingCreator from "./components/ImagineAskingCreator"
-import Hero from "./components/Hero"
-import MainContent from "./components/MainContent"
+import Navigation from "./components/sections/Navigation"
+import ImagineAskingCreator from "./components/sections/ImagineAskingCreator"
+import Hero from "./components/sections/Hero"
+import MainContent from "./components/sections/MainContent"
+import Supports from "./components/sections/Supports"
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
                 <Navigation />
                 <Hero />
                 <ImagineAskingCreator />
+                <Supports />
             </div>
             <MainContent />
         </div>

@@ -1,26 +1,26 @@
 [
     {
-        "creator": "Joe Rogan",
-        "question": "Your top 3 podcasting tips?"
+        "creator": "Elon Musk",
+        "question": "How will SpaceX's Mars plans impact Earth's economy?"
     },
     {
-        "creator": "Marques Brownlee",
-        "question": "Best tech gadget this year?"
+        "creator": "Naval Ravikant",
+        "question": "Can wealth and inner peace coexist harmoniously?"
     },
     {
-        "creator": "Gordon Ramsay",
-        "question": "Your secret to perfect eggs?"
+        "creator": "Marc Andreessen",
+        "question": "What's the next big shift in global tech trends?"
     },
     {
-        "creator": "Emma Chamberlain",
-        "question": "Essentials for a cozy day in?"
+        "creator": "Tim Ferriss",
+        "question": "What's the most underrated life optimization hack?"
+    },
+    {
+        "creator": "Sheryl Sandberg",
+        "question": "How can tech further empower women globally?"
     },
     {
         "creator": "Gary Vaynerchuk",
-        "question": "Key to starting a business?"
-    },
-    {
-        "creator": "Charli D'Amelio",
-        "question": "Favorite dance trend now?"
+        "question": "What's key to balancing hustle with wellness?"
     }
 ]

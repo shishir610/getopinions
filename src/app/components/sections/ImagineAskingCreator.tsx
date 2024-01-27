@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import imagine from "../data/imagine.json"
+import imagine from "../../data/imagine.json"
 import "./ImagineAskingCreator.css"
 
 export default function ImagineAskingCreator() {
