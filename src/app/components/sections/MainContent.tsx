@@ -1,15 +1,15 @@
 import React from "react"
 import CardArrangement from "../elements/CardArrangement"
-import TryNow from "./TryNow"
+import AskSomething from "./AskSomething"
 
 export default function MainContent() {
     return (
         <div>
+            <AskSomething />
             <p className="text-zinc-800 text-4xl py-20 font-semibold tracking-tighter text-center">
-                Why do I care about what they said?
+                Why not just Google it?
             </p>
             <CardArrangement />
-            <TryNow />
         </div>
     )
 }

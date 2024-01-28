@@ -7,7 +7,7 @@ export default function Hero() {
             <p className="text-zinc-800 text-7xl font-semibold tracking-tighter text-center">
                 Get real <span className="gradient-text">opinions</span> from{" "}
                 <br />
-                your favorite <span className="gradient-text">creators</span>
+                <span className="gradient-text">creators</span> you can trust
             </p>
             <p className="text-zinc-700 text-xl mt-8 font-light tracking-tighter text-center">
                 Ever wanted a very specific opinion from that Tweep?
