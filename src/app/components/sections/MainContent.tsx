@@ -6,7 +6,7 @@ export default function MainContent() {
     return (
         <div>
             <AskSomething />
-            <p className="text-zinc-600 text-4xl py-20 font-semibold tracking-tighter text-center">
+            <p className="text-zinc-700 text-4xl py-20 font-semibold tracking-tighter text-center">
                 Why not just Google it?
             </p>
             <CardArrangement />

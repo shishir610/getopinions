@@ -7,7 +7,7 @@ import Supports from "./components/sections/Supports"
 export default function Home() {
     return (
         <div className="flex flex-col justify-center">
-            <div className="bg-sky-50 pb-24">
+            <div className="pb-24">
                 <Navigation />
                 <Hero />
                 <ImagineAskingCreator />
