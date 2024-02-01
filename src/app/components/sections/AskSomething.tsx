@@ -7,8 +7,11 @@ interface Props {
     bgColor?: string
 }
 
+const creators = ["elon", "naval", "marc", "gary", "tim", "sheryl"]
+
 export default function AskSomething({ bgColor }: Props) {
     const [askInput, setAskInput] = useState("")
+    const [askCreator, setAskCreator] = useState("elon")
     const router = useRouter()
 
     const handleEnter = () => {
@@ -28,8 +31,8 @@ export default function AskSomething({ bgColor }: Props) {
             <div className="container mx-auto py-20 flex justify-center">
                 <div>
                     <div className="flex justify-center mt-10 border max-w-fit rounded-xl shadow-xl flex-col">
-                        <div className="w-full bg-zinc-100 h-5 flex justify-center">
-                            <p className="text-gray-400 text-sm font-semibold tracking-wide text-center">
+                        <div className="w-full bg-zinc-100 h-7 flex justify-center items-center">
+                            <p className="text-gray-500 text-sm font-semibold tracking-wide text-center underline decoration-dashed">
                                 ASK SOMETHING
                             </p>
                         </div>
@@ -50,9 +53,34 @@ export default function AskSomething({ bgColor }: Props) {
                             />
                         </div>
                     </div>
+                    <div className="flex items-center">
+                        <p className="text-gray-500 text-base font-medium tracking-wide my-6">
+                            Choose a creator
+                        </p>
+                        <div className="ml-4 flex">
+                            {creators.map((creator) => {
+                                console.log(askCreator === creator)
+                                const ringColor =
+                                    askCreator === creator
+                                        ? "green-500"
+                                        : "gray-300 hover:ring-gray-400"
+                                return (
+                                    <a
+                                        className="cursor-pointer"
+                                        onClick={() => setAskCreator(creator)}
+                                    >
+                                        <img
+                                            className={`w-8 h-8 p-[1.5px] object-cover rounded-full mr-1 ring-2 ring-${ringColor}`}
+                                            src={`/images/creators/${creator}.jpeg`}
+                                        />
+                                    </a>
+                                )
+                            })}
+                        </div>
+                    </div>
                     <button
                         type="submit"
-                        className="bg-white shadow-xl text-gray-400 flex items-center text-lg border border-gray-300 mt-4 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2"
+                        className="bg-white shadow-xl text-gray-500 flex items-center text-lg border border-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2"
                         onClick={handleEnter}
                     >
                         <span className="mr-2">ENTER</span>
