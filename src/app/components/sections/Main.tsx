@@ -44,7 +44,7 @@ export default function Main() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="py-20">
                 <AskSomething bgColor="bg-gray-100/45" />
             </div>
             <div>
