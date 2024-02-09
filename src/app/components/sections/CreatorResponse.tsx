@@ -4,39 +4,36 @@ import { useGlobalContext } from "@/app/Context/store"
 import React, { useEffect, useState } from "react"
 
 export default function CreatorResponse() {
-    const { state } = useGlobalContext()
     const [response, setResponse] = useState("")
+    const { state } = useGlobalContext()
+    const { askSomething, creatorName } = state
 
     useEffect(() => {
-        const fetchData = async () => {
+        const getMessage = async () => {
             try {
-                const requestBody = {
-                    model: "text-davinci-002",
-                    prompt: `Imagine you're sitting down for a one-on-one conversation with ${state.creatorName}. How would ${state.creatorName} answer the question ${state.askSomething}`,
-                    max_tokens: 100,
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        askSomething,
+                        creatorName,
+                    }),
                 }
-
-                const response = await fetch(
-                    "https://api.openai.com/v1/chat/completions",
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-                        },
-                        body: JSON.stringify(requestBody),
-                    }
+                const res = await fetch(
+                    "http://localhost:8080/completions",
+                    options
                 )
-
-                const data = await response.json()
-                setResponse(data.choices[0].text)
-            } catch (error) {
-                console.error("Error fetching data:", error)
+                const data = await res.json()
+                setResponse(data.choices[0].message.content)
+            } catch (e) {
+                console.log(e)
             }
         }
 
-        fetchData()
+        getMessage()
     }, [])
 
-    return <div>{response}</div>
+    return <div className="w-full">{response}</div>
 }

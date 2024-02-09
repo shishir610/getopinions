@@ -75,25 +75,25 @@ export default function AskSomething({ bgColor, askMode }: Props) {
     return (
         <div className={bgColor}>
             <div
-                className={`container mx-auto flex justify-center ${
+                className={`container mx-auto flex justify-center w-[500px] ${
                     !askMode ? "py-20" : ""
                 }`}
             >
-                <div>
-                    <div className="flex justify-center mt-10 border max-w-fit rounded-xl shadow-xl flex-col">
+                <div className="w-full">
+                    <div className="flex justify-center mt-10 border rounded-xl shadow-xl flex-col w-full">
                         <div className="w-full bg-zinc-100 h-7 flex justify-center items-center">
                             <p className="text-gray-500 text-sm font-semibold tracking-wide text-center underline decoration-dashed">
                                 {askMode ? "ASKING" : "ASK SOMETHING"}
                             </p>
                         </div>
-                        <div className="relative">
+                        <div className="w-full">
                             <input
                                 type="search"
                                 id="search"
-                                className="block w-max p-6 border-none text-lg text-gray-800 border border-gray-300 rounded-lg focus:border-transparent focus:outline-none"
+                                className="block w-full p-6 border-none text-lg text-gray-800 border border-gray-300 rounded-lg focus:border-transparent focus:outline-none"
                                 placeholder="How do I come up with startup ideas?"
                                 required
-                                size={50}
+                                // size={50}
                                 autoComplete={"off"}
                                 value={state.askSomething}
                                 onKeyDown={(ev) => handleKeyDown(ev)}
