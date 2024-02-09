@@ -5,7 +5,7 @@ interface Props {
     subHeading: string
 }
 
-export default function Card({ heading, subHeading }: Props) {
+export default function ReasonCard({ heading, subHeading }: Props) {
     return (
         <a
             href="#"

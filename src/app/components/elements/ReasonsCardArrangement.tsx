@@ -1,13 +1,14 @@
 import React from "react"
 import btg from "../../data/betterThanGoogle.json"
-import Card from "./Card"
+import ReasonCard from "./ReasonCard"
 
-export default function CardArrangement() {
+export default function ReasonsCardArrangement() {
     return (
         <div className="container mx-auto mb-20">
             <div className="flex">
                 {btg.map((reason) => (
-                    <Card
+                    <ReasonCard
+                        key={reason.heading}
                         heading={reason.heading}
                         subHeading={reason.subHeading}
                     />

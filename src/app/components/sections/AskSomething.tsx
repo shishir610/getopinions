@@ -1,13 +1,12 @@
 "use client"
 import { CornerDownLeft, Plus, Twitter } from "lucide-react"
 import { useRouter } from "next/navigation"
-import React, { useState } from "react"
+import React, { ReactNode, useState } from "react"
+import imagine from "../../data/imagine.json"
 
 interface Props {
     bgColor?: string
 }
-
-const creators = ["elon", "naval", "marc", "gary", "tim", "sheryl"]
 
 export default function AskSomething({ bgColor }: Props) {
     const [askInput, setAskInput] = useState("")
@@ -24,6 +23,28 @@ export default function AskSomething({ bgColor }: Props) {
         if (event.key === "Enter") {
             handleEnter()
         }
+    }
+
+    const renderCreatorAvatars = () => {
+        return imagine.map((i) => {
+            const creator = i.creator.split(" ")[0].toLowerCase()
+            const ringColor =
+                askCreator === creator
+                    ? "ring-green-500"
+                    : "ring-gray-300 hover:ring-gray-400"
+            return (
+                <a
+                    className="cursor-pointer"
+                    onClick={() => setAskCreator(creator)}
+                    key={`avatar-${creator}`}
+                >
+                    <img
+                        className={`w-8 h-8 p-[1.5px] object-cover rounded-full mr-1 ring-2 ${ringColor}`}
+                        src={`/images/creators/${creator}.jpeg`}
+                    />
+                </a>
+            )
+        })
     }
 
     return (
@@ -58,24 +79,7 @@ export default function AskSomething({ bgColor }: Props) {
                             Choose a creator
                         </p>
                         <div className="ml-4 flex">
-                            {creators.map((creator) => {
-                                console.log(askCreator === creator)
-                                const ringColor =
-                                    askCreator === creator
-                                        ? "green-500"
-                                        : "gray-300 hover:ring-gray-400"
-                                return (
-                                    <a
-                                        className="cursor-pointer"
-                                        onClick={() => setAskCreator(creator)}
-                                    >
-                                        <img
-                                            className={`w-8 h-8 p-[1.5px] object-cover rounded-full mr-1 ring-2 ring-${ringColor}`}
-                                            src={`/images/creators/${creator}.jpeg`}
-                                        />
-                                    </a>
-                                )
-                            })}
+                            {renderCreatorAvatars()}
                         </div>
                     </div>
                     <button
