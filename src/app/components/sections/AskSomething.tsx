@@ -32,7 +32,7 @@ export default function AskSomething({ bgColor, askMode }: Props) {
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeyDown)
-    }, [handleKeyDown])
+    }, [])
 
     const renderCreatorAvatars = () => {
         return imagine.map((i) => {
