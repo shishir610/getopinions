@@ -16,7 +16,7 @@ const reducer = (state: State, action: Action): State => {
     switch (type) {
         case ActionTypes.SET_ASK_SOMETHING:
             if (payload?.askSomething !== undefined) {
-                localStorage.setItem("askSomething", payload.askSomething)
+                // localStorage.setItem("askSomething", payload.askSomething)
                 return {
                     ...state,
                     askSomething: payload.askSomething,
@@ -26,7 +26,7 @@ const reducer = (state: State, action: Action): State => {
 
         case ActionTypes.SET_CREATOR:
             if (payload?.creatorName) {
-                localStorage.setItem("creatorName", payload.creatorName)
+                // localStorage.setItem("creatorName", payload.creatorName)
                 return {
                     ...state,
                     creatorName: payload.creatorName,
