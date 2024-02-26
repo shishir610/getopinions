@@ -6,8 +6,8 @@ import { Action, ActionTypes, IGlobalContext, State } from "./storeInterface"
 // Reducer for global state
 
 const initialState = {
-    askSomething: localStorage.getItem("askSomething") || "",
-    creatorName: localStorage.getItem("creatorName") || "Elon Musk",
+    askSomething: "",
+    creatorName: "Elon Musk",
 }
 
 const reducer = (state: State, action: Action): State => {
