@@ -37,8 +37,6 @@ export default function CreatorResponse() {
         getCreatorResponse()
     }, [])
 
-    console.log(response)
-
     return (
         <div className="w-full mb-20">
             {response !== "" && (

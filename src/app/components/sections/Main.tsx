@@ -4,18 +4,21 @@ import EmailForm from "../elements/EmailForm"
 import imagine from "../../data/imagine.json"
 import AskSomething from "./AskSomething"
 import ReasonsCardArrangement from "../elements/ReasonsCardArrangement"
+import { Construction } from "lucide-react"
 
 export default function Main() {
     return (
         <div className="flex flex-col justify-center">
             <div className="pb-24">
-                <p className="absolute text-sm p-2 border left-1/2 ">
-                    Work in progress
+                <p className="absolute text-lg p-2 border left-1/2 shadow-sm transform -translate-x-1/2 top-5 font-medium rounded-lg flex">
+                    <Construction size={30} />
+                    <span className="ml-2">Work in progress</span>
                 </p>
                 <Navigation />
                 <div className="py-16 w-100 flex flex-col items-center">
                     <p className="text-zinc-800 text-7xl font-semibold tracking-tighter text-center">
-                        Get real <span className="gradient-text">opinions </span>
+                        Get real{" "}
+                        <span className="gradient-text">opinions </span>
                         from <br />
                         <span className="gradient-text">creators</span> you can
                         trust
