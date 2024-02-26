@@ -15,7 +15,7 @@ export default function Main() {
                 <Navigation />
                 <div className="py-16 w-100 flex flex-col items-center">
                     <p className="text-zinc-800 text-7xl font-semibold tracking-tighter text-center">
-                        Get real <span className="gradient-text">opinions</span>{" "}
+                        Get real <span className="gradient-text">opinions </span>
                         from <br />
                         <span className="gradient-text">creators</span> you can
                         trust
