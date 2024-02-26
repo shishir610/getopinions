@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useReducer } from "react"
 import { Action, ActionTypes, IGlobalContext, State } from "./storeInterface"
-import { useAskSomethingHelper, useCreatorNameHelper } from "./payloadHelper"
 
 // Reducer for global state
 
@@ -16,18 +15,24 @@ const reducer = (state: State, action: Action): State => {
 
     switch (type) {
         case ActionTypes.SET_ASK_SOMETHING:
-            localStorage.setItem("askSomething", useAskSomethingHelper(payload))
-            return {
-                ...state,
-                askSomething: useAskSomethingHelper(payload),
+            if (payload?.askSomething !== undefined) {
+                localStorage.setItem("askSomething", payload.askSomething)
+                return {
+                    ...state,
+                    askSomething: payload.askSomething,
+                }
             }
+            return state
 
         case ActionTypes.SET_CREATOR:
-            localStorage.setItem("creatorName", useCreatorNameHelper(payload))
-            return {
-                ...state,
-                creatorName: useCreatorNameHelper(payload),
+            if (payload?.creatorName) {
+                localStorage.setItem("creatorName", payload.creatorName)
+                return {
+                    ...state,
+                    creatorName: payload.creatorName,
+                }
             }
+            return state
 
         default:
             return state
