@@ -2,6 +2,7 @@
 
 import { useGlobalContext } from "@/app/Context/store"
 import React, { useEffect, useState } from "react"
+import TypewriterComponent from "typewriter-effect"
 
 export default function CreatorResponse() {
     const [response, setResponse] = useState("")
@@ -9,7 +10,7 @@ export default function CreatorResponse() {
     const { askSomething, creatorName } = state
 
     useEffect(() => {
-        const getMessage = async () => {
+        const getCreatorResponse = async () => {
             try {
                 const options = {
                     method: "POST",
@@ -26,14 +27,41 @@ export default function CreatorResponse() {
                     options
                 )
                 const data = await res.json()
+                console.log(data.choices[0].message)
                 setResponse(data.choices[0].message.content)
             } catch (e) {
                 console.log(e)
             }
         }
 
-        getMessage()
+        getCreatorResponse()
     }, [])
 
-    return <div className="w-full">{response}</div>
+    console.log(response)
+
+    return (
+        <div className="w-full mb-20">
+            {response !== "" && (
+                <TypewriterComponent
+                    onInit={(typewriter) => {
+                        typewriter
+                            .changeDelay(10)
+                            .typeString(
+                                `<p className="text-zinc-700 text-base px-4 font-normal tracking-tighter">
+                                ${response}
+                                </p>`
+                            )
+                            .start()
+                    }}
+                />
+            )}
+            {response == "" && (
+                <TypewriterComponent
+                    onInit={(typewriter) => {
+                        typewriter.typeString("").start()
+                    }}
+                />
+            )}
+        </div>
+    )
 }

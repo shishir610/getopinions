@@ -9,6 +9,9 @@ export default function Main() {
     return (
         <div className="flex flex-col justify-center">
             <div className="pb-24">
+                <p className="absolute text-sm p-2 border left-1/2 ">
+                    Work in progress
+                </p>
                 <Navigation />
                 <div className="py-16 w-100 flex flex-col items-center">
                     <p className="text-zinc-800 text-7xl font-semibold tracking-tighter text-center">

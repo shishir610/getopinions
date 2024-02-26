@@ -32,10 +32,7 @@ export default function AskSomething({ bgColor, askMode }: Props) {
 
     useEffect(() => {
         document.addEventListener("keydown", handleKeyDown)
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown)
-        }
-    }, [])
+    }, [handleKeyDown])
 
     const renderCreatorAvatars = () => {
         return imagine.map((i) => {
@@ -82,7 +79,7 @@ export default function AskSomething({ bgColor, askMode }: Props) {
                 <div className="w-full">
                     <div className="flex justify-center mt-10 border rounded-xl shadow-xl flex-col w-full">
                         <div className="w-full bg-zinc-100 h-7 flex justify-center items-center">
-                            <p className="text-gray-500 text-sm font-semibold tracking-wide text-center underline decoration-dashed">
+                            <p className="text-gray-500 text-sm font-semibold tracking-wide text-center">
                                 {askMode ? "ASKING" : "ASK SOMETHING"}
                             </p>
                         </div>
@@ -93,7 +90,6 @@ export default function AskSomething({ bgColor, askMode }: Props) {
                                 className="block w-full p-6 border-none text-lg text-gray-800 border border-gray-300 rounded-lg focus:border-transparent focus:outline-none"
                                 placeholder="How do I come up with startup ideas?"
                                 required
-                                // size={50}
                                 autoComplete={"off"}
                                 value={state.askSomething}
                                 onKeyDown={(ev) => handleKeyDown(ev)}
@@ -110,7 +106,7 @@ export default function AskSomething({ bgColor, askMode }: Props) {
                     </div>
                     <div className="flex items-center">
                         {!askMode && (
-                            <p className="text-gray-500 text-base font-medium tracking-wide">
+                            <p className="text-gray-500 text-base font-medium tracking-normal">
                                 Choose a creator
                             </p>
                         )}

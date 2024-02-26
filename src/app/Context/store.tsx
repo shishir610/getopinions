@@ -2,12 +2,13 @@
 
 import { createContext, useContext, useReducer } from "react"
 import { Action, ActionTypes, IGlobalContext, State } from "./storeInterface"
+import { askSomethingHelper, creatorNameHelper } from "./payloadHelper"
 
 // Reducer for global state
 
 const initialState = {
-    askSomething: "",
-    creatorName: "Elon Musk",
+    askSomething: localStorage.getItem("askSomething") || "",
+    creatorName: localStorage.getItem("creatorName") || "Elon Musk",
 }
 
 const reducer = (state: State, action: Action): State => {
@@ -15,15 +16,17 @@ const reducer = (state: State, action: Action): State => {
 
     switch (type) {
         case ActionTypes.SET_ASK_SOMETHING:
+            localStorage.setItem("askSomething", askSomethingHelper(payload))
             return {
                 ...state,
-                askSomething: payload?.askSomething || state.askSomething,
+                askSomething: askSomethingHelper(payload),
             }
 
         case ActionTypes.SET_CREATOR:
+            localStorage.setItem("creatorName", creatorNameHelper(payload))
             return {
                 ...state,
-                creatorName: payload?.creatorName || state.creatorName,
+                creatorName: creatorNameHelper(payload),
             }
 
         default:
