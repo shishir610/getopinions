@@ -23,7 +23,7 @@ export default function CreatorResponse() {
                     }),
                 }
                 const res = await fetch(
-                    "http://localhost:8080/completions",
+                    "https://getopinions-api.vercel.app/completions",
                     options
                 )
                 const data = await res.json()
